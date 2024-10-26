@@ -39,6 +39,9 @@ Os dados coletados são exibidos no console e, no futuro, podem ser integrados c
 
 <p align="center">
 <img src="assets/project.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
+<img src="assets/screen1.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
+<img src="assets/simulation.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
+<img src="assets/library.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
 </p>
 
 
@@ -92,7 +95,7 @@ O projeto inclui as seguintes funcionalidades:
 Esses valores são exibidos no console.
 Medida de Distância:
 
-O sensor HC-SR04 mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
+* O sensor HC-SR04 mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
 A distância é calculada com base no tempo de resposta do sensor e exibida no console.
 Detecção de Movimento:
 
