@@ -37,11 +37,34 @@ O sistema utiliza quatro sensores conectados ao microcontrolador ESP32:
 
 Os dados coletados são exibidos no console e, no futuro, podem ser integrados com um banco de dados para armazenar e consultar informações históricas, além de integrar um sistema de irrigação.
 
+## ⚙️ Estrutura do Circuito
+
 <p align="center">
-<img src="assets/project.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
-<img src="assets/screen1.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
-<img src="assets/simulation.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
-<img src="assets/library.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
+  <img src="assets/project.png" alt="Estrutura do Circuito" border="0" width="50%" height="50%">
+</p>
+
+<p align="center">
+  <strong>Figura 1:</strong> Estrutura do Circuito
+</p>
+
+## Simulação em Execução
+
+<p align="center">
+  <img src="assets/simulation.png" alt="Simulação em Execução" border="0" width="50%" height="50%">
+</p>
+
+<p align="center">
+  <strong>Figura 2:</strong> Simulação em Execução com Leitura dos Sensores
+</p>
+
+## Bibliotecas do Projeto
+
+<p align="center">
+  <img src="assets/library.png" alt="Bibliotecas do Projeto" border="0" width="50%" height="50%">
+</p>
+
+<p align="center">
+  <strong>Figura 3:</strong> Bibliotecas do Projeto no Wokwi
 </p>
 
 
