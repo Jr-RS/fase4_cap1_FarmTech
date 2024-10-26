@@ -6,15 +6,18 @@
 
 <br>
 
+🌾 Projeto de Monitoramento Agrícola - FarmTech Solutions
+
 # Nome do projeto
-Cap 6 - Python e além
+Fase 3 - Cap 12 - A Eletrônica de uma IA
 
 ## Nome do grupo
-Grupo 32
+Grupo 10
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/">Ana Beatriz Duarte Domingues</a>
 - <a href="https://www.linkedin.com/in/jrsilva051/">Junior Rodrigues da Silva</a>
+- <a href="https://www.linkedin.com/in/">Carlos Emilio Castillo Estrada</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
@@ -25,12 +28,18 @@ Grupo 32
 
 ## 📜 Descrição
 
-*Este projeto refere-se a um software de gestão de aluguel de pavilhões, onde o operador pode realizar as seguintes tarefas:*
+O sistema utiliza quatro sensores conectados ao microcontrolador ESP32:
 
-- Cadastrar os pavilhões disponíveis para locação.
-- Inativar pavilhões que estavam disponíveis para locação, mas não estão mais.
-- Realizar movimentação de estoque sempre que um pavilhão for alugado ou desocupado.
-- Monitorar o estoque.
+* DHT22: Sensor de temperatura e umidade.
+* HC-SR04: Sensor ultrassônico para medir a distância (simulando um possível monitoramento de nível de água).
+* PIR: Sensor de movimento para detectar presença.
+* LDR: Sensor de luminosidade (simulando níveis de pH, onde variações de luz são interpretadas como alterações de pH).
+
+Os dados coletados são exibidos no console e, no futuro, podem ser integrados com um banco de dados para armazenar e consultar informações históricas, além de integrar um sistema de irrigação.
+
+<p align="center">
+<img src="assets/project.png" alt="Estrutura do projeto" border="0" width=40% height=40%></a>
+</p>
 
 
 ## 📁 Estrutura de pastas
@@ -51,53 +60,56 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
+
 ## 🔧 Como executar o código
 
+Você tem 2 opções para executar o projeto, importando o arquivo 'Fase3_Cap12_A_Eletronica_de_uma_IA' da pasta scr/ e seguindo os pasos abaixo
+
+Acesse a plataforma Wokwi, crie um projeto e selecione o microcontrolador ESP32.
+Conecte os sensores conforme a imagem do diagrama na sesão 'Descrição'.
+Copie e cole o código do arquivo 'sketch.ino' editor de código da Wokwi.
+Instale as dependencias.
+Para iniciar a simulação, clique no botão de "Play" (executar).
+O monitor serial mostrará os valores dos sensores em intervalos de 2 segundos.
+
+ou, acessando o link disponibilizado no arquivo 'link_projeto_wokwi'.
+
 ### Pré-requisitos
-Antes de executar o projeto, certifique-se de ter os seguintes pré-requisitos:
 
-- **Python**: Certifique-se de ter o Python instalado. Recomenda-se a versão 3.8 ou superior. Você pode baixar o Python [aqui](https://www.python.org/downloads/).
-  
-- **Bibliotecas Python**:
-  - `oracledb`: Biblioteca para conexão com o banco de dados Oracle.
-  - `pandas`: Biblioteca para manipulação de dados.
-  - `tabulate`: Biblioteca para formatação de tabelas no console.
+Para que o código funcione corretamente, certifique-se de instalar a biblioteca DHT sensor library. No Wokwi, essa biblioteca geralmente já está incluída. No entanto, se você estiver executando o código em uma IDE como o Arduino IDE, será necessário instalar a biblioteca seguindo as etapas abaixo:
 
-  Você pode instalar essas bibliotecas usando `pip`. Execute o seguinte comando no terminal:
-  ```bash
-  pip install oracledb pandas tabulate
-
-1 - Instalando o Projeto
- Clone o repositório (ou faça o download do código): git clone <URL_DO_REPOSITORIO>
-
-2 - Configure as credenciais do banco de dados
- No arquivo Python, ajuste as credenciais de conexão no método conectar_banco(): connection = oracledb.connect(user="SEU_USUARIO", password="SUA_SENHA", dsn="oracle.fiap.com.br:1521/orcl")
-
-3 - Executando o Código
- a - Abra o terminal.
- b - Navegue até o diretório do projeto.
- c - Execute o script Python: python crud.py
-
+Abra a Arduino IDE.
+Vá para Sketch > Include Library > Manage Libraries...
+Procure por "DHT sensor library" de Adafruit e instale a versão mais recente.
 
 ### Funcionalidades
-Conexão com o Banco de Dados: O sistema estabelece uma conexão com o banco de dados Oracle.
 
-Validação e Criação de Tabelas: O sistema valida se as tabelas necessárias (pavilhoes e movimentacoes) existem, e as cria caso contrário.
+O projeto inclui as seguintes funcionalidades:
 
-Cadastro de Pavilhão: Permite cadastrar novos pavilhões informando o nome, capacidade e localização.
+Leitura de Temperatura e Umidade:
 
-Inativação de Pavilhão: Permite inativar um pavilhão existente.
+Utilizando o sensor DHT22, o sistema coleta dados de temperatura e umidade.
+Esses valores são exibidos no console.
+Medida de Distância:
 
-Movimentação de Estoque: Registra movimentações de entrada e saída de grãos nos pavilhões.
+O sensor HC-SR04 mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
+A distância é calculada com base no tempo de resposta do sensor e exibida no console.
+Detecção de Movimento:
 
-Listagem de Estoque: Exibe a lista de pavilhões disponíveis e suas movimentações.
+O sensor PIR detecta movimento no ambiente, simulando um sistema de segurança.
+O console exibe uma mensagem indicando se há ou não movimento detectado.
+Leitura de Intensidade de Luz (LDR):
 
-Menu Interativo: O sistema possui um menu interativo para facilitar a navegação entre as opções.
+O sensor LDR mede a intensidade da luz ambiente, representando variações como se fossem dados de pH.
+A leitura do LDR é mostrada no console, simulando o nível de pH com base na luz.
+Console com Dados:
+
+Todos os dados são apresentados no console, com uma atualização a cada 2 segundos para facilitar a visualização em tempo real.
 
 
 ## 🗃 Histórico de lançamentos
 
-* 0.1.0 - 09/10/2024
+* 0.1.0 - 26/10/2024
     *
 
 ## 📋 Licença
