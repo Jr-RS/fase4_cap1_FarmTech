@@ -6,7 +6,7 @@
 
 <br>
 
-🌾 Projeto de Monitoramento Agrícola - FarmTech Solutions
+# 🌾 Projeto de Monitoramento Agrícola - FarmTech Solutions
 
 # Nome do projeto
 Fase 3 - Cap 12 - A Eletrônica de uma IA
@@ -65,30 +65,30 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 Você tem 2 opções para executar o projeto, importando o arquivo 'Fase3_Cap12_A_Eletronica_de_uma_IA' da pasta scr/ e seguindo os pasos abaixo
 
-Acesse a plataforma Wokwi, crie um projeto e selecione o microcontrolador ESP32.
-Conecte os sensores conforme a imagem do diagrama na sesão 'Descrição'.
-Copie e cole o código do arquivo 'sketch.ino' editor de código da Wokwi.
-Instale as dependencias.
-Para iniciar a simulação, clique no botão de "Play" (executar).
-O monitor serial mostrará os valores dos sensores em intervalos de 2 segundos.
+* 1 Acesse a plataforma Wokwi, crie um projeto e selecione o microcontrolador ESP32.
+* 2 Conecte os sensores conforme a imagem do diagrama na sesão 'Descrição'.
+* 3 Copie e cole o código do arquivo 'sketch.ino' editor de código da Wokwi.
+* 4 Instale as dependencias.
+* 5 Para iniciar a simulação, clique no botão de "Play" (executar).
+* 6 O monitor serial mostrará os valores dos sensores em intervalos de 2 segundos.
 
 ou, acessando o link disponibilizado no arquivo 'link_projeto_wokwi'.
 
-### Pré-requisitos
+### 💼 Pré-requisitos
 
 Para que o código funcione corretamente, certifique-se de instalar a biblioteca DHT sensor library. No Wokwi, essa biblioteca geralmente já está incluída. No entanto, se você estiver executando o código em uma IDE como o Arduino IDE, será necessário instalar a biblioteca seguindo as etapas abaixo:
 
-Abra a Arduino IDE.
-Vá para Sketch > Include Library > Manage Libraries...
-Procure por "DHT sensor library" de Adafruit e instale a versão mais recente.
+* 1 Abra a Arduino IDE.
+* 2 Vá para Sketch > Include Library > Manage Libraries...
+* 3 Procure por "DHT sensor library" de Adafruit e instale a versão mais recente.
 
-### Funcionalidades
+### 🚀 Funcionalidades
 
 O projeto inclui as seguintes funcionalidades:
 
-Leitura de Temperatura e Umidade:
+* Leitura de Temperatura e Umidade:
 
-Utilizando o sensor DHT22, o sistema coleta dados de temperatura e umidade.
+* Utilizando o sensor DHT22, o sistema coleta dados de temperatura e umidade.
 Esses valores são exibidos no console.
 Medida de Distância:
 
@@ -96,11 +96,11 @@ O sensor HC-SR04 mede a distância até um objeto, o que pode ser utilizado para
 A distância é calculada com base no tempo de resposta do sensor e exibida no console.
 Detecção de Movimento:
 
-O sensor PIR detecta movimento no ambiente, simulando um sistema de segurança.
+* O sensor PIR detecta movimento no ambiente, simulando um sistema de segurança.
 O console exibe uma mensagem indicando se há ou não movimento detectado.
 Leitura de Intensidade de Luz (LDR):
 
-O sensor LDR mede a intensidade da luz ambiente, representando variações como se fossem dados de pH.
+* O sensor LDR mede a intensidade da luz ambiente, representando variações como se fossem dados de pH.
 A leitura do LDR é mostrada no console, simulando o nível de pH com base na luz.
 Console com Dados:
 
