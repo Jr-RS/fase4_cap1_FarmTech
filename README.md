@@ -6,13 +6,13 @@
 
 <br>
 
-# 🌾 Projeto de Monitoramento Agrícola - FarmTech Solutions
+# 🌾 Projeto de Sistema de Irrigação Inteligente - FarmTech Solutions
 
 # Nome do projeto
-Fase 3 - Cap 12 - A Eletrônica de uma IA
+Fase 4 - Cap 1 - Automação e Inteligência na FarmTech Solutions
 
 ## Nome do grupo
-Grupo 10
+Grupo 44
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/">Ana Beatriz Duarte Domingues</a>
@@ -27,46 +27,55 @@ Grupo 10
 
 
 ## 📜 Descrição
+Nesta fase do projeto FarmTech Solutions, o sistema de irrigação inteligente foi aprimorado para atingir um novo nível de eficiência e inteligência. O objetivo é monitorar as condições do solo em tempo real, prever a necessidade de irrigação e apresentar essas informações de forma clara e interativa. As principais melhorias incluem:
+- Scikit-learn: para criar um modelo preditivo que sugere ações de irrigação.
+- Streamlit: para desenvolver um dashboard interativo que mostra dados em tempo real.
+- Banco de dados: aprimoramento da estrutura para permitir o armazenamento histórico dos dados dos sensores.
+- Display LCD no Wokwi: para exibir as principais métricas em tempo real.
+- Serial Plotter: para monitorar variáveis através de gráficos dinâmicos.
+- Otimizações de memória: no código C/C++ do ESP32 para melhorar a eficiência do sistema.
 
-O sistema utiliza quatro sensores conectados ao microcontrolador ESP32:
 
-* DHT22: Sensor de temperatura e umidade.
-* HC-SR04: Sensor ultrassônico para medir a distância (simulando um possível monitoramento de nível de água).
-* PIR: Sensor de movimento para detectar presença.
-* LDR: Sensor de luminosidade (simulando níveis de pH, onde variações de luz são interpretadas como alterações de pH).
-
-Os dados coletados são exibidos no console e, no futuro, podem ser integrados com um banco de dados para armazenar e consultar informações históricas, além de integrar um sistema de irrigação.
-
-## ⚙️ Estrutura do Circuito
+## 📸 Imagens do Projeto
+### Estrutura do Circuito 
 
 <p align="center">
-  <img src="assets/project.png" alt="Estrutura do Circuito" border="0" width="50%" height="50%">
+  <img src="assets/project4.png" alt="Estrutura do Circuito" border="0" width="50%" height="50%">
 </p>
 
 <p align="center">
-  <strong>Figura 1:</strong> Estrutura do Circuito
+  <strong>Figura 1:</strong> Estrutura do Circuito no Wokwi
 </p>
 
-## Simulação em Execução
+### Simulação em Execução
 
 <p align="center">
-  <img src="assets/simulation.png" alt="Simulação em Execução" border="0" width="50%" height="50%">
+  <img src="assets/simulation4.png" alt="Simulação em Execução" border="0" width="50%" height="50%">
 </p>
 
 <p align="center">
   <strong>Figura 2:</strong> Simulação em Execução com Leitura dos Sensores
 </p>
 
-## Bibliotecas do Projeto
+### Serial Plotter
 
 <p align="center">
-  <img src="assets/library.png" alt="Bibliotecas do Projeto" border="0" width="50%" height="50%">
+  <img src="assets/serialplotter4.png" alt="Serial Plotter" border="0" width="50%" height="50%">
 </p>
 
 <p align="center">
-  <strong>Figura 3:</strong> Bibliotecas do Projeto no Wokwi
+  <strong>Figura 3:</strong> Monitoriamento de Variáveis com Serial Plotter
 </p>
 
+### Bibliotecas do Projeto
+
+<p align="center">
+  <img src="assets/library4.png" alt="Bibliotecas do Projeto" border="0" width="50%" height="50%">
+</p>
+
+<p align="center">
+  <strong>Figura 4:</strong> Bibliotecas do Projeto no Wokwi
+</p>
 
 ## 📁 Estrutura de pastas
 
@@ -88,54 +97,48 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 
 ## 🔧 Como executar o código
-
-Você tem 2 opções para executar o projeto, importando o arquivo 'Fase3_Cap12_A_Eletronica_de_uma_IA' da pasta scr/ e seguindo os pasos abaixo
-
-* 1 Acesse a plataforma Wokwi, crie um projeto e selecione o microcontrolador ESP32.
-* 2 Conecte os sensores conforme a imagem do diagrama na sesão 'Descrição'.
-* 3 Copie e cole o código do arquivo 'sketch.ino' editor de código da Wokwi.
-* 4 Instale as dependencias.
-* 5 Para iniciar a simulação, clique no botão de "Play" (executar).
-* 6 O monitor serial mostrará os valores dos sensores em intervalos de 2 segundos.
-
-ou, acessando o link disponibilizado no arquivo 'link_projeto_wokwi'.
-
 ### 💼 Pré-requisitos
+Antes de iniciar, certifique-se de que você tem:
 
-Para que o código funcione corretamente, certifique-se de instalar a biblioteca DHT sensor library. No Wokwi, essa biblioteca geralmente já está incluída. No entanto, se você estiver executando o código em uma IDE como o Arduino IDE, será necessário instalar a biblioteca seguindo as etapas abaixo:
+1. Simulador Wokwi configurado.
+2. Python instalado, recomenda-se a versão 3.8 ou superior.
+3. As bibliotecas necessárias: 'streamlit', 'scikit-learn' e 'mysql-connector-python'.
+4. Banco de Dados MySQL configurado, localmente ou na nuvem, para armazenar os dados coletados.
 
-* 1 Abra a Arduino IDE.
-* 2 Vá para Sketch > Include Library > Manage Libraries...
-* 3 Procure por "DHT sensor library" de Adafruit e instale a versão mais recente.
+### 🚀 Passo a Passo
+**1. Executar a Simulação no Wokwi**
+* Acesse o Wokwi.
+* Importe o projeto utilizando o link disponível no arquivo 'link_projeto_wokwi.txt' localizado no repositório.
+* Confira a conexão correta dos seguintes sensores:
+  - DHT22: mede a umidade e a temperatura.
+  - HC-SR04: mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
+  - LDR: mede a intensidade da luz ambiente.
+  - PIR: este sensor detecta movimento no ambiente, simulando um sistema de segurança.
+* Inicie a simulação clicando no botão "Start Simulation".
+  - O display LCD exibirá informações atualizadas sobre umidade e temperatura e status da irrigação. Se o valor de umidade estiver abaixo de um determinado limite (definido na variável 'IRRIGATION_THRESHOLD'), o status da irrigação é alterado para "SI" - Ativado. Caso contrário, o status permanece como "NA" - Desativado.
+  - O Serial Plotter utilizado para monitorar as variáveis em tempo real, como a umidade e os níveis de luz.
 
-### 🚀 Funcionalidades
+**2. Executar o Dashboard com Streamlit**
+* Baixe ou clone o repositório do projeto, onde está o código do dashboard.
+* Abra o arquivo 'dashboard_streamlit.py' localizado na pasta 'src'.
+* Execute o código no seu ambiente Python.
+* O dashboard abrirá automaticamente no navegador ou exibirá um link para acesso.
+* Explore as seguintes funcionalidades do dashboard:
+  - Visualização de Dados em Tempo Real
+  - Previsões do Modelo Preditivo
+  - Insights de Desempenho
 
-O projeto inclui as seguintes funcionalidades:
+**3. Configurar e Usar o Banco de Dados**
+* Configure o banco de dados SQL utilizando o script 'database_setup.sql' para criar as tabelas.
+* Execute o código Python para inserir e consultar os dados dos sensores em tempo real.
 
-* Leitura de Temperatura e Umidade:
-
-* Utilizando o sensor DHT22, o sistema coleta dados de temperatura e umidade.
-Esses valores são exibidos no console.
-Medida de Distância:
-
-* O sensor HC-SR04 mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
-A distância é calculada com base no tempo de resposta do sensor e exibida no console.
-Detecção de Movimento:
-
-* O sensor PIR detecta movimento no ambiente, simulando um sistema de segurança.
-O console exibe uma mensagem indicando se há ou não movimento detectado.
-Leitura de Intensidade de Luz (LDR):
-
-* O sensor LDR mede a intensidade da luz ambiente, representando variações como se fossem dados de pH.
-A leitura do LDR é mostrada no console, simulando o nível de pH com base na luz.
-Console com Dados:
-
-Todos os dados são apresentados no console, com uma atualização a cada 2 segundos para facilitar a visualização em tempo real.
-
+### 🎥 Vídeo Demonstrativo 
+O vídeo demonstrativo do projeto, está disponível no YouTube.
+LINK
 
 ## 🗃 Histórico de lançamentos
 
-* 0.1.0 - 26/10/2024
+* 0.1.0 - 03/12/2024
     *
 
 ## 📋 Licença
