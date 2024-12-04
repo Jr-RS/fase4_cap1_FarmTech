@@ -135,8 +135,8 @@ Antes de iniciar, certifique-se de que você tem:
 
   
 ### 🎥 Vídeo Demonstrativo 
-O vídeo demonstrativo do projeto, está disponível no YouTube.
-(https://youtu.be/ZKiO2bHWjcY)
+O vídeo demonstrativo do projeto, está disponível no YouTube: 
+https://youtu.be/ZKiO2bHWjcY
 
 ## 🗃 Histórico de lançamentos
 
