@@ -102,25 +102,25 @@ Antes de iniciar, certifique-se de que você tem:
 
 1. Simulador Wokwi configurado.
 2. Python instalado, recomenda-se a versão 3.8 ou superior.
-3. As bibliotecas necessárias: 'streamlit', 'scikit-learn' e 'mysql-connector-python'.
-4. Banco de Dados MySQL configurado, localmente ou na nuvem, para armazenar os dados coletados.
+3. As bibliotecas necessárias: `streamlit`, `scikit-learn` e `mysql-connector-python`.
+5. Banco de Dados MySQL configurado, localmente ou na nuvem, para armazenar os dados coletados.
 
 ### 🚀 Passo a Passo
 **1. Executar a Simulação no Wokwi**
 * Acesse o Wokwi.
-* Importe o projeto utilizando o link disponível no arquivo 'link_projeto_wokwi.txt' localizado no repositório.
+* Importe o projeto utilizando o link disponível no arquivo `link_projeto_wokwi.txt` localizado no repositório.
 * Confira a conexão correta dos seguintes sensores:
   - DHT22: mede a umidade e a temperatura.
   - HC-SR04: mede a distância até um objeto, o que pode ser utilizado para monitorar o nível de um reservatório de água.
   - LDR: mede a intensidade da luz ambiente.
   - PIR: este sensor detecta movimento no ambiente, simulando um sistema de segurança.
 * Inicie a simulação clicando no botão "Start Simulation".
-  - O display LCD exibirá informações atualizadas sobre umidade e temperatura e status da irrigação. Se o valor de umidade estiver abaixo de um determinado limite (definido na variável 'IRRIGATION_THRESHOLD'), o status da irrigação é alterado para "SI" - Ativado. Caso contrário, o status permanece como "NA" - Desativado.
+  - O display LCD exibirá informações atualizadas sobre umidade e temperatura e status da irrigação. Se o valor de umidade estiver abaixo de um determinado limite (definido na variável `IRRIGATION_THRESHOLD`), o status da irrigação é alterado para "SI" - Ativado. Caso contrário, o status permanece como "NA" - Desativado.
   - O Serial Plotter utilizado para monitorar as variáveis em tempo real, como a umidade e os níveis de luz.
 
 **2. Executar o Dashboard com Streamlit**
 * Baixe ou clone o repositório do projeto, onde está o código do dashboard.
-* Abra o arquivo 'dashboard_streamlit.py' localizado na pasta 'src'.
+* Abra o arquivo `app.py`.
 * Execute o código no seu ambiente Python.
 * O dashboard abrirá automaticamente no navegador ou exibirá um link para acesso.
 * Explore as seguintes funcionalidades do dashboard:
@@ -128,10 +128,12 @@ Antes de iniciar, certifique-se de que você tem:
   - Previsões do Modelo Preditivo
   - Insights de Desempenho
 
-**3. Configurar e Usar o Banco de Dados**
-* Configure o banco de dados SQL utilizando o script 'database_setup.sql' para criar as tabelas.
-* Execute o código Python para inserir e consultar os dados dos sensores em tempo real.
+**3. Executar o Modelo Preditivo**
+* Abra o arquivo `analise_modelo.ipynb` em um ambiente Jupyter Notebook.
+* Execute todas as células para carregar os dados, treinar o modelo e visualizar os resultados.
+* Para acompanhar as previsões em tempo real, execute o dashboard Streamlit conforme indicado na documentação.
 
+  
 ### 🎥 Vídeo Demonstrativo 
 O vídeo demonstrativo do projeto, está disponível no YouTube.
 LINK
