@@ -1,0 +1,65 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include "DHT.h"
+
+#define DHTPIN 4            // Pino DHT22
+#define DHTTYPE DHT22       // Tipo DHT
+#define LDR_PIN 34          // Pino LDR (GPIO 34)
+#define IRRIGATION_THRESHOLD 40  // Limite de umidade para ativar irrigação
+
+DHT dht(DHTPIN, DHTTYPE);    // Inicializa DHT22
+LiquidCrystal_I2C lcd(0x27, 16, 2);  // Endereço do LCD
+
+// Variáveis otimizadas 
+byte irrigacao = 0;   // 0: Não irrigando, 1: Irrigando
+uint8_t valorLuz = 0;  // LDR valor (usamos uint8_t pois o valor máximo do LDR é 255)
+uint8_t temperatura = 0;  // Temperatura em °C (arredondada para int)
+uint8_t umidade = 0;  // Umidade em %
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Iniciando Sistema...");
+  
+  lcd.init();
+  lcd.backlight();
+  dht.begin();
+  
+  // Inicialização no LCD
+  lcd.setCursor(0, 0);
+  lcd.print("Iniciando...");
+  delay(2000);  
+  lcd.clear();
+}
+
+void loop() {
+  // Leituras dos sensores (não precisamos de floats, então convertemos para int)
+  temperatura = (uint8_t) dht.readTemperature();  // Arredondamos para 1 casa decimal (int)
+  umidade = (uint8_t) dht.readHumidity();  // Arredondamos para 1 casa decimal (int)
+  valorLuz = (uint8_t) analogRead(LDR_PIN);  // Leitura do LDR
+  
+  // Determinando se a irrigação é necessária com base na umidade
+  irrigacao = (umidade < IRRIGATION_THRESHOLD) ? 1 : 0;
+
+  // Display LCD
+  lcd.setCursor(0, 0);
+  lcd.print("Temp: ");
+  lcd.print(temperatura);
+  lcd.print("C");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Umid: ");
+  lcd.print(umidade);
+  lcd.print("% ");
+
+  lcd.setCursor(10, 1);
+  lcd.print(irrigacao ? "IRR:Sim" : "IRR:Nao");
+
+  delay(1000);  // Atualizar a cada segundo
+  lcd.clear();  // Limpar LCD para nova atualização
+
+  // Serial Plotter para monitorar umidade e luz
+  Serial.print("Umidade: ");
+  Serial.println(umidade);
+  Serial.print("Luz: ");
+  Serial.println(valorLuz);
+}
